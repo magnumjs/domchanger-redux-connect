@@ -3,14 +3,14 @@
 [DomChanger](https://github.com/creationix/domchanger) bindings for Redux.
 Performant and flexible.
 
-Requires Redux
+###Installation, requires DomChanger & Redux
 
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
 <script src="//rawgit.com/creationix/domchanger/master/domchanger.min.js"></script>
 ```
 
-##Example - Counter: 
+##Example - Counter
 
 ###1. Define your Redux state and actions
 
