@@ -1,5 +1,7 @@
 # domchanger-redux-connect
-domchanger connection to redux
+
+[DomChanger](https://github.com/creationix/domchanger) bindings for Redux.
+Performant and flexible.
 
 Requires Redux
 
@@ -93,3 +95,6 @@ var count = Redux.connect(domChanger(CurrentCount, document.body))({
   link: buttons
 });
 ```
+##Live Example
+
+You can play around with a larger example in this Plunker.
