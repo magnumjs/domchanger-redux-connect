@@ -119,7 +119,8 @@ That should contain all your normal Redux intialization values such as middleWar
 {
   reducers: counter,
   actionTypes: types,
-  middleware: [Redux.middle.thunkMiddleware, Redux.middle.logger]
+  middleware: [Redux.middle.thunkMiddleware, Redux.middle.logger],
+  initState
 };
 
 ```
