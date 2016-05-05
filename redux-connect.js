@@ -41,7 +41,6 @@ Example:
 
       var linked = params.link;
       var reducers = params.reducers && typeof params.reducers != 'function' ? Redux.combineReducers(params.reducers) : params.reducers;
-      var actions = params.actions;
       var middleware = params.middleware || [];
       var initState = params.initState;
       var types = linked ? linked.storeTypes : params.actionTypes;
