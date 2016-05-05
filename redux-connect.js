@@ -1,6 +1,7 @@
 /*
 Name: Redux.connect
-Description: conenct domchanger components to your Redux reducers actions and state via their props with auto updating.
+version: 0.1.0
+Description: connect domchanger components to your Redux reducers actions and state via their props with auto updating.
 Author: Michael Glazer 
 Link: https://github.com/magnumjs/domchanger-redux-connect
 Copyright (c) 2016
@@ -37,15 +38,11 @@ Example:
     return function(params) {
 
       var linked = params.link;
-
       var reducers = params.reducers && typeof params.reducers != 'function' ? Redux.combineReducers(params.reducers) : params.reducers;
       var actions = params.actions;
       var middleware = params.middleware || [];
       var initState = params.initState;
       var types = linked ? linked.storeTypes : params.actionTypes;
-
-
-
       var store = linked ? linked.store : Redux.createStore(reducers, initState, Redux.applyMiddleware.apply({}, middleware));
 
       var unsubscribe = store.subscribe(function() {
