@@ -88,12 +88,12 @@ Connect and run your components with Redux.connect
 
 ```javascript
 //Initialize component and connect to your Redux actions & state:
-var buttons = Redux.connect(domChanger(IncrementButtons, document.body))(reduxApp).update();
+var buttons = Redux.connect(domChanger(IncrementButtons, document.body))(reduxApp).update(true);
 
 //Link independent component to existing Redux.connect instance:
 var count = Redux.connect(domChanger(CurrentCount, document.body))({
   link: buttons
-});
+}).update(true);
 ```
 ##Live Example
 
