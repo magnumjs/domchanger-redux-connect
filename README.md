@@ -97,4 +97,4 @@ var count = Redux.connect(domChanger(CurrentCount, document.body))({
 ```
 ##Live Example
 
-You can play around with a larger example in this Plunker.
+You can play around with a larger example in this [Plunker](http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/).
