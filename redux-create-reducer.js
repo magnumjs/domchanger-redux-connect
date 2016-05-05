@@ -1,3 +1,14 @@
+/*
+Name: Redux.createReducer
+Description: helper utility for redux to create a reducer and handlers to their actions.
+Author: Michael Glazer 
+Link: https://github.com/magnumjs/domchanger-redux-connect
+Copyright (c) 2016
+License MIT
+Example: 
+*/
+
+"use strict";
 
 (function(Redux) {
 
