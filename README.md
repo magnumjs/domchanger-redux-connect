@@ -12,7 +12,7 @@ Requires Redux
 
 ##Example - Counter: 
 
-Define your Redux state and actions
+###1. Define your Redux state and actions
 
 ```javascript
 var reduxApp = (function(Redux, counterService) {
@@ -50,7 +50,7 @@ var reduxApp = (function(Redux, counterService) {
 }(Redux, counterService));
 ```
 
-Define your domchanger components
+###2. Define your domchanger components
 
 ```javascript
 
@@ -84,7 +84,7 @@ function CurrentCount() {
 }
 ```
 
-Connect and run your components with Redux.connect
+###3. Connect and run your components with Redux.connect
 
 ```javascript
 //Initialize component and connect to your Redux actions & state:
@@ -98,3 +98,57 @@ var count = Redux.connect(domChanger(CurrentCount, document.body))({
 ##Live Example
 
 You can play around with a larger example in this [Plunker](http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/).
+
+
+##API
+There is one method `Redux.connect(COMPONENT)`
+
+It receives one argument, the component you want to wrap.
+```javascript
+var componentInstance =domChanger(IncrementButtons, document.body);
+Redux.connect(componentInstance);
+```
+It returns a function that you pass in your Redux object to. 
+```javascript
+var connectInstance = Redux.connect(domChanger(IncrementButtons, document.body));
+connectInstance.(reduxApp)
+```
+
+That should contain all your normal Redux intialization values such as middleWare and gets passed to `Redux.createStore`
+```javascript
+{
+  reducers: counter,
+  actionTypes: types,
+  middleware: [Redux.middle.thunkMiddleware, Redux.middle.logger]
+};
+
+```
+That returns a object representing your domchanger components normal return methods such as destroy, update ..
+
+```javascript
+{
+  update,
+  destroy,
+  append,
+  handleEvent
+};
+```
+You use the returned wrapped component instance to intialize your component by calling `update`
+```javascript
+var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
+  (reduxApp).update(true);
+```
+*Note* that some value is required to `update` for the initial render since we're doing a check on whether to update.
+
+There is one unique property that the redux initialization function takes `link`
+Which it you can link one store to multiple components
+
+```javascript
+var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
+  (reduxApp).update(true);
+
+Redux.connect(domChanger(CurrentCount, document.body))({
+  link: buttons
+}).update(true);
+```
+
