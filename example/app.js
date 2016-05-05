@@ -1,3 +1,4 @@
+//Component:
 function IncrementButtons() {
   return {
     render: function(props) {
@@ -18,6 +19,7 @@ function IncrementButtons() {
   }
 }
 
+//Component:
 function CurrentCount() {
   return {
     render: function(props) {
@@ -27,9 +29,11 @@ function CurrentCount() {
 }
 
 
-
-var buttons = Redux.connect(domChanger(IncrementButtons, document.body))(reduxApp).update();
-
-var count = Redux.connect(domChanger(CurrentCount, document.body))({
+//Run:
+var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
+  (reduxApp).update(true);
+  
+//Run & link
+Redux.connect(domChanger(CurrentCount, document.body))({
   link: buttons
-});
+}).update(true);
