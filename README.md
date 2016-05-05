@@ -141,8 +141,7 @@ var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
 ```
 *Note* that some value is required to `update` for the initial render since we're doing a check on whether to update.
 
-There is one unique property that the redux initialization function takes `link`
-Which it you can link one store to multiple components
+There is one unique property that the redux initialization function takes `link` with it you can link one store to multiple components
 
 ```javascript
 var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
