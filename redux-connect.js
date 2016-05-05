@@ -10,7 +10,7 @@ Example:
 
 "use strict";
 
-;(function(Redux) {
+(function(Redux) {
 
   Redux.connect = function(component) {
 
