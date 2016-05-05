@@ -111,7 +111,7 @@ Redux.connect(componentInstance);
 It returns a function that you pass in your Redux object to. 
 ```javascript
 var connectInstance = Redux.connect(domChanger(IncrementButtons, document.body));
-connectInstance.(reduxApp)
+connectInstance(reduxApp)
 ```
 
 That should contain all your normal Redux intialization values such as middleWare and gets passed to `Redux.createStore`
