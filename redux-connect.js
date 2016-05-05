@@ -24,7 +24,9 @@ Example:
       Object.keys(types).forEach(function(type) {
         //Convention of naming action types for props access
         //ADD-TODOS becomes props.addTodos each dash represents a camelCase
-        var camelCased = type.toLowerCase().replace(/-([a-z|A-Z])/g, function (g) { return g[1].toUpperCase(); });
+        var camelCased = type.toLowerCase().replace(/-([a-z|A-Z])/g, function(g) {
+          return g[1].toUpperCase();
+        });
         actions[camelCased] = function() {
           store.dispatch(Object.assign({}, {
             type: type
@@ -57,8 +59,13 @@ Example:
         orig.destroy();
       };
 
+      var prev;
       component.update = function(props) {
-        orig.update(Object.assign(props || {}, filterPropsState(store, types)))
+        //Comparsion check to avoid re-running
+        if (props !== prev) {
+          orig.update(Object.assign(props || {}, filterPropsState(store, types)))
+        }
+        prev = Object.assign({}, props);
         return this;
       };
 
@@ -66,4 +73,4 @@ Example:
     }
   };
 
-}(Redux));
+}(window.Redux || {}));
