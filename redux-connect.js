@@ -6,7 +6,7 @@ Author: Michael Glazer
 Link: https://github.com/magnumjs/domchanger-redux-connect
 Copyright (c) 2016
 License MIT
-Example: 
+Example: http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/
 */
 
 "use strict";
@@ -47,7 +47,7 @@ Example:
       var store = linked ? linked.store : Redux.createStore(reducers, initState, Redux.applyMiddleware.apply({}, middleware));
 
       var unsubscribe = store.subscribe(function() {
-        component.update();
+        component.update(store.getState());
       });
 
       component.store = store;
@@ -60,11 +60,11 @@ Example:
 
       var prev;
       component.update = function(props) {
-        //Comparsion check to avoid re-running
-        if (props !== prev) {
+        //Comparsion check to avoid re-running unnecessarily
+        if (JSON.stringify(props) !== prev) {
           orig.update(Object.assign(props || {}, filterPropsState(store, types)))
         }
-        prev = Object.assign({}, props);
+        prev = JSON.stringify(props);
         return this;
       };
 
