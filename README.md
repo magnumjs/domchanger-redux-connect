@@ -3,6 +3,8 @@
 [DomChanger](https://github.com/creationix/domchanger) bindings for Redux.
 Performant and flexible.
 
+##[Example](https://github.com/magnumjs/domchanger-redux-connect#example---counter) - [Api](https://github.com/magnumjs/domchanger-redux-connect#api) - [Tests](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+
 ###Installation, requires DomChanger & Redux
 
 ```html
@@ -153,3 +155,5 @@ Redux.connect(domChanger(CurrentCount, document.body))({
 ```
 
 `link` is the instance created by `Redux.connect`which is the same object returned by the `update`method property. 
+
+##[Jasmine Specs](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
