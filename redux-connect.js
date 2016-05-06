@@ -43,7 +43,7 @@ Example: http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/
       var reducers = params.reducers && typeof params.reducers != 'function' ? Redux.combineReducers(params.reducers) : params.reducers;
       var middleware = params.middleware || [];
       var initState = params.initState;
-      var types = linked ? linked.storeTypes : params.actionTypes;
+      var types = linked ? linked.storeTypes : params.actionTypes || {};
       var store = linked ? linked.store : Redux.createStore(reducers, initState, Redux.applyMiddleware.apply({}, middleware));
 
       var unsubscribe = store.subscribe(function() {
