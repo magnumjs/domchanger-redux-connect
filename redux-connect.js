@@ -72,4 +72,4 @@ Example: http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/
     }
   };
 
-}(window.Redux || {}));
+}(window.Redux =  window.Redux || {}));
