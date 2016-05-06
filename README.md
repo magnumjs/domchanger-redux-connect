@@ -157,3 +157,7 @@ Redux.connect(domChanger(CurrentCount, document.body))({
 `link` is the instance created by `Redux.connect`which is the same object returned by the `update`method property. 
 
 ##[Jasmine Specs](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+
+###Inspired by & cloned from
+
+[react-redux](https://github.com/reactjs/react-redux)
