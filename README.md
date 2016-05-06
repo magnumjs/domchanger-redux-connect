@@ -136,7 +136,7 @@ That returns a object representing your domchanger components normal return meth
   handleEvent
 };
 ```
-You use the returned wrapped component instance to intialize your component by calling `update`
+You use the returned wrapped component instance to initialize your component by calling `update`
 ```javascript
 var buttons = Redux.connect(domChanger(IncrementButtons, document.body))
   (reduxApp).update(true);
