@@ -6,7 +6,7 @@ Author: Michael Glazer
 Link: https://github.com/magnumjs/domchanger-redux-connect
 Copyright (c) 2016
 License MIT
-Example: http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/
+Example: http://embed.plnkr.co/quIf8csaG61DZ3Qf1DSU/
 */
 
 "use strict";
