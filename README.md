@@ -3,18 +3,18 @@
 [DomChanger](https://github.com/creationix/domchanger) bindings for Redux.
 Performant and flexible.
 
-##[Example](https://github.com/magnumjs/domchanger-redux-connect#example---counter) - [Api](https://github.com/magnumjs/domchanger-redux-connect#api) - [Tests](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+## [Example](https://github.com/magnumjs/domchanger-redux-connect#example---counter) - [Api](https://github.com/magnumjs/domchanger-redux-connect#api) - [Tests](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
 
-###Installation, requires DomChanger & Redux
+### Installation, requires DomChanger & Redux
 
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
-<script src="//rawgit.com/creationix/domchanger/master/domchanger.min.js"></script>
+<script src="//rawgit.com/creationix/domchanger/master/domchanger.js"></script>
 ```
 
-##Example - Counter
+## Example - Counter
 
-###1. Define your Redux state and actions
+### 1. Define your Redux state and actions
 
 ```javascript
 var reduxApp = (function(Redux, counterService) {
@@ -52,7 +52,7 @@ var reduxApp = (function(Redux, counterService) {
 }(Redux, counterService));
 ```
 
-###2. Define your domchanger components
+### 2. Define your domchanger components
 
 ```javascript
 
@@ -86,7 +86,7 @@ function CurrentCount() {
 }
 ```
 
-###3. Connect and run your components with Redux.connect
+### 3. Connect and run your components with Redux.connect
 
 ```javascript
 //Initialize component and connect to your Redux actions & state:
@@ -97,12 +97,12 @@ var count = Redux.connect(domChanger(CurrentCount, document.body))({
   link: buttons
 }).update(true);
 ```
-##Live Example
+## Live Example
 
 You can play around with a larger example in this [Plunker](http://embed.plnkr.co/2v70NgfcNYJDNsGccwTR/).
 
 
-##API
+## API
 There is one method `Redux.connect(COMPONENT)`
 
 It receives one argument, the component you want to wrap.
@@ -156,8 +156,8 @@ Redux.connect(domChanger(CurrentCount, document.body))({
 
 `link` is the instance created by `Redux.connect`which is the same object returned by the `update`method property. 
 
-##[Jasmine Specs](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+## [Jasmine Specs](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
 
-###Inspired by & cloned from
+### Inspired by & cloned from
 
 [react-redux](https://github.com/reactjs/react-redux)
