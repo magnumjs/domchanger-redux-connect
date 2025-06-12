@@ -3,13 +3,13 @@
 [DomChanger](https://github.com/creationix/domchanger) bindings for Redux.
 Performant and flexible.
 
-## [Example](https://github.com/magnumjs/domchanger-redux-connect#example---counter) - [Api](https://github.com/magnumjs/domchanger-redux-connect#api) - [Tests](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+## [Example](https://github.com/magnumjs/domchanger-redux-connect#example---counter) - [Api](https://github.com/magnumjs/domchanger-redux-connect#api) - [Tests](https://raw.githack.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
 
 ### Installation, requires DomChanger & Redux
 
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
-<script src="//rawgit.com/creationix/domchanger/master/domchanger.js"></script>
+<script src="//raw.githack.com/creationix/domchanger/master/domchanger.js"></script>
 ```
 
 ## Example - Counter
@@ -156,7 +156,7 @@ Redux.connect(domChanger(CurrentCount, document.body))({
 
 `link` is the instance created by `Redux.connect`which is the same object returned by the `update`method property. 
 
-## [Jasmine Specs](https://rawgit.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
+## [Jasmine Specs](https://raw.githack.com/magnumjs/domchanger-redux-connect/master/tests/specRunner.html)
 
 ### Inspired by & cloned from
 
